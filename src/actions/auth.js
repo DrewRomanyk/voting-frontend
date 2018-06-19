@@ -1,14 +1,16 @@
 
 
 export const FETCH_AUTH = 'AUTH_FETCH_AUTH';
+export const FETCH_AUTH_SUCCESSFUL = 'AUTH_FETCH_AUTH_SUCCESSFUL';
+export const FETCH_AUTH_ERROR = 'AUTH_FETCH_AUTH_ERROR';
 /*
 function requestAuth() {
     return {
       type: FETCH_AUTH
     }
   }
-  
-  export function fetchAuth(pokemon) {
+
+export function fetchAuth(pokemon) {
     return function(dispatch, getState){
       dispatch(requestAuth())
       return P.getPokemonByName(pokemon)
