@@ -1,24 +1,22 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
-
-import logo from '../logo.svg';
+import PropTypes from 'prop-types';
 
 import NavBar from '../components/navbar';
 
 class Page404 extends Component {
+    static propTypes = {
+        location: PropTypes.shape({
+            pathname: PropTypes.string.isRequired,
+        }).isRequired,
+    }
+
     render() {
         return (
             <div>
-                <NavBar />
-                <div className="App">
-                    <header className="App-header">
-                        <img src={logo} className="App-logo" alt="logo" />
-                        <h1 className="App-title">Welcome to 404</h1>
-                    </header>
-                    <p className="App-intro">
-                        To get started, edit <code>src/App.js</code> and save to reload. Boom!
-                    </p>
-                </div>
+                <NavBar pathname={this.props.location.pathname} />
+                <h3>Oops!</h3>
+                <p>The requested URL {this.props.location.pathname} was not found!</p>
             </div>
         );
     }

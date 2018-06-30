@@ -1,19 +1,26 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import logo from '../logo.svg';
 
 import NavBar from '../components/navbar';
 
-class Category extends Component {
+class Candidate extends Component {
+    static propTypes = {
+        location: PropTypes.shape({
+            pathname: PropTypes.string.isRequired,
+        }).isRequired,
+    }
+
     render() {
         return (
             <div>
-                <NavBar />
+                <NavBar pathname={this.props.location.pathname} />
                 <div className="App">
                     <header className="App-header">
                         <img src={logo} className="App-logo" alt="logo" />
-                        <h1 className="App-title">Welcome to Category</h1>
+                        <h1 className="App-title">Welcome to Candidate</h1>
                     </header>
                     <p className="App-intro">
                         To get started, edit <code>src/App.js</code> and save to reload. Boom!
@@ -24,4 +31,4 @@ class Category extends Component {
     }
 }
 
-export default Category;
+export default Candidate;

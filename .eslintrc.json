@@ -4,9 +4,15 @@
         "browser": true,
         "es6": true
     },
+    "parser": "babel-eslint",
     "rules": {
         "indent": ["error", 4],
         "jsx-a11y/href-no-hash": "off",
+        "jsx-a11y/anchor-is-valid": ["error", {
+            "components": ["Link"],
+            "specialLink": ["to"],
+            "aspects": ["noHref", "invalidHref", "preferButton"]
+          }],
         "react/jsx-indent": ["error", 4],
         "react/jsx-indent-props": ["error", 4]
     },
