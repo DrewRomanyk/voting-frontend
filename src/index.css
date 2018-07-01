@@ -28,3 +28,9 @@ body, #root {
 .button .icon {
   margin: 0 -.2rem 0 -.2rem !important;
 }
+
+.ui.container.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

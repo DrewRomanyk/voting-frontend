@@ -25,12 +25,6 @@ class NavBar extends Component {
                             active={pathname.startsWith('/election')}
                         />
                     </Link>
-                    <Link to="/about">
-                        <Menu.Item
-                            name="about"
-                            active={pathname.startsWith('/about')}
-                        />
-                    </Link>
                     <Link to="/help">
                         <Menu.Item
                             name="help"
