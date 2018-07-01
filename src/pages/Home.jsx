@@ -1,15 +1,22 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import logo from '../logo.svg';
 
 import NavBar from '../components/navbar';
 
 class Home extends Component {
+    static propTypes = {
+        location: PropTypes.shape({
+            pathname: PropTypes.string.isRequired,
+        }).isRequired,
+    }
+
     render() {
         return (
             <div>
-                <NavBar menuItems={['Candidates', 'Elections', 'About']} />
+                <NavBar menuItems={['Candidates', 'Elections', 'About']} pathname={this.props.location.pathname}/>
                 <div className="App">
                     <header className="App-header">
                         <img src={logo} className="App-logo" alt="logo" />

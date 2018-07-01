@@ -1,0 +1,22 @@
+.ui.secondary.pointing.menu .item {
+    border-bottom-width: .2rem;
+    height: 4rem;
+}
+
+.ui.secondary.pointing.menu .item:hover {
+    border-color: #999999;
+}
+
+.ui.secondary.pointing.menu .title:hover {
+    border-color: transparent;
+}
+
+.ui.secondary.pointing.menu .active.item {
+    border-color: #5AB3FF;
+    color: #5AB3FF;
+}
+
+.ui.secondary.pointing.menu .active.item:hover {
+    border-color: #5AB3FF;
+    color: #5AB3FF;
+}
