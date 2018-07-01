@@ -1,43 +1,49 @@
+/* eslint-disable react/forbid-prop-types, react/prefer-stateless-function */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Input, Menu } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import './navbar.css';
 
 class NavBar extends Component {
     static propTypes = {
-        pathname: PropTypes.string.isRequired,
+        location: PropTypes.object.isRequired,
         menuItems: PropTypes.arrayOf(PropTypes.string).isRequired,
-    }
-
-    constructor(props) {
-        super(props);
-        this.state = {};
     }
 
     render() {
         return (
-            <Menu pointing secondary>
-                <Link to="/">
-                    <Menu.Item className="title" name="Voter App" onClick={this.handleItemClick} />
-                </Link>
-                <Menu.Menu position="right" pointing secondary>
+            <nav>
+                <div className="nav-logo">
+                    <Link to="/">Cool Voting Info App</Link>
+                </div>
+                <div className="nav-right">
                     {
                         this.props.menuItems.map(menuItem =>
                             (
-                                <Link to={`/${menuItem}`}>
-                                    <Menu.Item
-                                        name={menuItem}
-                                        active={this.props.pathname.startsWith(`/${menuItem}`)}
-                                    />
-                                </Link>
+                                <NavItem
+                                    name={menuItem}
+                                    active={this.props.location.pathname.startsWith(`/${menuItem}`)}
+                                    key={menuItem}
+                                />
                             ))
                     }
-                </Menu.Menu>
-            </Menu>
+                </div>
+            </nav>
         );
     }
 }
 
-export default NavBar;
+/* NavItem functional component */
+const NavItem = props => (<Link to={`/${props.name}`} className={`nav-item ${props.active ? 'active' : ''}`}>{props.name}</Link>);
+
+NavItem.propTypes = {
+    name: PropTypes.string.isRequired,
+    active: PropTypes.bool,
+};
+
+NavItem.defaultProps = {
+    active: false,
+};
+
+export default withRouter(NavBar);
