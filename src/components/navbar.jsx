@@ -14,7 +14,7 @@ class NavBar extends Component {
         return (
             <Menu pointing secondary>
                 <Link to="/">
-                    <Menu.Item name="Voter App" onClick={this.handleItemClick} />
+                    <Menu.Item className="title" name="Voter App" onClick={this.handleItemClick} />
                 </Link>
                 <Menu.Menu position="right" pointing secondary>
                     <Link to="/candidate">
