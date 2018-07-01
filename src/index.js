@@ -1,8 +1,2 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
-
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+// This workaround is necessary due to create-react-app wanting 'index.js' instead of 'index.jsx'
+require('./index.jsx');
