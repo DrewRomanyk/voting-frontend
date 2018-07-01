@@ -22,17 +22,18 @@ nav {
 }
 
 .nav-logo a {
-    color: #000;
+    color: #373737;
 }
 
 .nav-item {
     display: flex;
     align-items: center;
     height: 100%;
-    color: #000;
+    color: #373737;
     font-weight: 900;
     border-bottom: 12px solid rgba(0,0,0,0);
     padding-right: 1em;
+    letter-spacing: .5px;
 }
 
 .nav-item.active {

@@ -8,7 +8,7 @@ import './navbar.css';
 class NavBar extends Component {
     static propTypes = {
         location: PropTypes.object.isRequired,
-        menuItems: PropTypes.arrayOf(PropTypes.string).isRequired,
+        navItems: PropTypes.arrayOf(PropTypes.string).isRequired,
     }
 
     render() {
@@ -19,12 +19,12 @@ class NavBar extends Component {
                 </div>
                 <div className="nav-right">
                     {
-                        this.props.menuItems.map(menuItem =>
+                        this.props.navItems.map(item =>
                             (
                                 <NavItem
-                                    name={menuItem}
-                                    active={this.props.location.pathname.startsWith(`/${menuItem}`)}
-                                    key={menuItem}
+                                    name={item}
+                                    active={this.props.location.pathname.startsWith(`/${item}`)} // Might want to make the navItems array be objects with a name and activelink if we want them to be different. But for now I think it is good design for them to have parity.
+                                    key={item}
                                 />
                             ))
                     }

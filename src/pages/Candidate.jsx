@@ -1,16 +1,17 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 
-class Candidate extends Component {
+import Page from '../template/Page';
+import CandidateContent from '../components/CandidateContent';
+
+class Home extends Component {
     render() {
         return (
-            <div>
-                <div className="App">
-                    <h1>CANDIDATE</h1>
-                </div>
-            </div>
+            <Page>
+                <CandidateContent />
+            </Page>
         );
     }
 }
 
-export default Candidate;
+export default Home;
